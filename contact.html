@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Tinahls Triad Agro CC</title>
+  <meta name="description" content="Get in touch with Tinahls Triad Agro CC in Oshakati, Namibia. Call, WhatsApp or send us a message." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .contact-info-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .contact-info-card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-info-card p, .contact-info-card a {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .contact-form {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
 
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Tinahls Triad Agro Logo" />
+          <div class="logo-text">
+            Tinahls Triad Agro
+            <span>Your Partner in Agro Prosperity</span>
+          </div>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="contact.html" class="active nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>We would love to hear from you. Reach out for training, consultancy or any enquiry.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div>
+          <div class="contact-info-card">
+            <h3><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Address</h3>
+            <p>Erf 1642, Omusisiti Street<br>Ekuku, Oshakati<br>Oshana Region, Namibia</p>
+          </div>
+
+          <div class="contact-info-card">
+            <h3><i class="fas fa-phone" style="color:var(--primary)"></i> Phone</h3>
+            <p>
+              <a href="tel:+264817050652">081 705 0652</a><br>
+              <a href="tel:+264813188489">081 318 8489</a>
+            </p>
+          </div>
+
+          <div class="contact-info-card">
+            <h3><i class="fas fa-envelope" style="color:var(--primary)"></i> Email</h3>
+            <p><a href="mailto:tinahsagrotriad@gmail.com">tinahsagrotriad@gmail.com</a></p>
+          </div>
+
+          <div class="contact-info-card">
+            <h3><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</h3>
+            <p><a href="https://wa.me/264817050652" target="_blank">Chat with us on WhatsApp</a></p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h2 style="margin-bottom: 8px; color: var(--primary-dark);">Send us a message</h2>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">Fill in the form and we will get back to you as soon as possible.</p>
+
+          <!-- Replace the action URL with your Formspree endpoint later -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <div class="form-group">
+              <label for="service">I’m interested in</label>
+              <select id="service" name="service">
+                <option value="">Select an option</option>
+                <option value="Training / Workshop">Training / Workshop</option>
+                <option value="Farm Consultancy">Farm Consultancy</option>
+                <option value="Livestock Support">Livestock Support</option>
+                <option value="Crop Production">Crop Production</option>
+                <option value="Input Supply">Input Supply</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us briefly what you need..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Tinahls Triad Agro" />
+          <p>Empowering Namibian farmers and students through quality training, practical solutions and sustainable farming practices.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Farm Consultancy</a></li>
+            <li><a href="training.html">Workshops</a></li>
+            <li><a href="services.html">Livestock Support</a></li>
+            <li><a href="services.html">Input Supply</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Ekuku, Oshakati, Namibia</li>
+            <li><i class="fas fa-phone"></i> 081 705 0652</li>
+            <li><i class="fas fa-phone"></i> 081 318 8489</li>
+            <li><i class="fas fa-envelope"></i> tinahsagrotriad@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tinahls Triad Agro CC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/264817050652" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
