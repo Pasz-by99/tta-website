@@ -298,7 +298,7 @@ body {
 .footer {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
   color: #d1d5db;
-  padding: 16px 0 12px; /* Reduced padding to make it slimmer */
+  padding: 18px 0 12px; 
   flex-shrink: 0;
   position: relative;
   border-top: 4px solid var(--accent);
@@ -306,7 +306,7 @@ body {
 
 .footer-grid {
   display: flex;
-  flex-direction: row; /* Changed to row to put everything horizontal */
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -318,7 +318,7 @@ body {
 .footer-brand { 
   display: flex; 
   align-items: center; 
-  gap: 12px; 
+  gap: 14px; 
 }
 .footer-brand img { 
   height: 45px; 
@@ -327,21 +327,32 @@ body {
   padding: 4px; 
   border-radius: 8px; 
 }
-.footer-brand p { 
-  font-family: var(--font-display); 
-  font-size: 0.85rem; 
-  line-height: 1.3; 
-  color: #e5e7eb; 
-  display: none; /* Hide text on desktop to save space */
+.footer-brand-text strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--accent-light);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.footer-brand-text span {
+  display: block;
+  font-family: var(--font-display);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 /* Links */
-.footer-col h4 { display: none; /* Hide headings on desktop */ }
+.footer-col h4 { display: none; }
 .footer-links { 
   list-style: none; 
   display: flex; 
   flex-direction: row; 
-  gap: 20px; 
+  gap: 24px; 
+  margin: 0;
+  padding: 0;
 }
 .footer-links a { 
   color: #e5e7eb !important; 
@@ -357,28 +368,59 @@ body {
 .footer-contact { 
   display: flex; 
   flex-direction: row; 
-  gap: 20px; 
+  gap: 24px; 
   color: #e5e7eb; 
   font-size: 0.85rem;
 }
 .footer-contact span { 
   display: flex; 
   align-items: center; 
-  gap: 6px; 
+  gap: 8px; 
 }
 .footer-contact i { color: var(--accent-light); }
 
 /* Bottom Copyright */
 .footer-bottom {
   text-align: center;
-  margin-top: 12px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.75rem;
   color: #cbd5d0;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE FOOTER ===== */
+@media (max-width: 992px) {
+  .footer-grid { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 20px;
+  }
+  .footer-brand { 
+    justify-content: center; 
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-col h4 { 
+    display: block; 
+    margin-bottom: 12px; 
+    color: var(--accent-light); 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+  }
+  .footer-links { 
+    flex-direction: column; 
+    gap: 10px; 
+  }
+  .footer-contact { 
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: center; 
+  }
+}
+
+/* ===== RESPONSIVE (General) ===== */
 @media (max-width: 992px) {
   .hero { padding: 20px 0 170px; }
   .hero-text { text-align: center; }
@@ -398,18 +440,6 @@ body {
   .services-grid { grid-template-columns: 1fr; max-width: 420px; }
   body { min-height: auto; }
   .container { padding: 0 20px; }
-
-  /* Revert footer to stacked on mobile/tablet */
-  .footer-grid { 
-    flex-direction: column; 
-    text-align: center; 
-    gap: 16px;
-  }
-  .footer-brand { justify-content: center; }
-  .footer-brand p { display: block; } /* Show text on mobile */
-  .footer-col h4 { display: block; margin-bottom: 8px; color: var(--accent-light); font-size: 0.8rem; text-transform: uppercase; } /* Show headings on mobile */
-  .footer-links { flex-direction: column; gap: 8px; }
-  .footer-contact { flex-direction: column; gap: 8px; align-items: center; }
 }
 
 @media (max-width: 768px) {
