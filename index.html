@@ -37,20 +37,20 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Empowering Farmers in Livestock and Sustainable Farming</h1>
-          <p>Tinahls Triad Agro (TTA) delivers practical and theoretical training, farm consultancy, and modern solutions that improve productivity and profitability across Namibia.</p>
-          <div class="hero-buttons">
-            <a href="services.html" class="btn btn-outline">Explore Our Services</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <!-- UPLOAD YOUR TRANSPARENT COW IMAGE AS cow.png -->
-          <img src="images/cow.png" alt="Cow" />
+    <div class="container hero-container">
+      <div class="hero-text">
+        <!-- I have added a <br> to force the 2-line break exactly like your Figma -->
+        <h1>Empowering Farmers in Livestock<br>and Sustainable Farming</h1>
+        <p>Tinahls Triad Agro (TTA) delivers practical and theoretical training, farm consultancy, and modern solutions that improve productivity and profitability across Namibia.</p>
+        <div class="hero-buttons">
+          <a href="services.html" class="btn btn-outline">Explore Our Services</a>
         </div>
       </div>
+    </div>
+    
+    <!-- The cow is moved out of the container to overflow the edges freely -->
+    <div class="hero-image">
+      <img src="images/cow.png" alt="Cow" />
     </div>
   </section>
 
@@ -115,7 +115,6 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Float -->
   <a href="https://wa.me/264817050652" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
