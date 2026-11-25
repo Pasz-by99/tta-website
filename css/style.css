@@ -33,9 +33,9 @@ body {
 /* ===== CONTAINER ===== */
 .container {
   width: 100%;
-  max-width: 1200px; /* Standard width */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px; /* Perfect side margins */
+  padding: 0 40px; 
 }
 
 /* ===== HEADER ===== */
@@ -124,15 +124,16 @@ body {
   cursor: pointer;
 }
 
-/* ===== HERO SECTION (MATCHING FIGMA) ===== */
+/* ===== HERO SECTION ===== */
 .hero {
   background: var(--primary);
   color: white;
-  padding: 60px 0; /* Restored padding to match Figma height */
+  padding: 60px 0;
   position: relative;
   flex-shrink: 0;
 }
 
+/* This container holds the text and the cow */
 .hero-content {
   display: flex;
   justify-content: space-between;
@@ -140,26 +141,28 @@ body {
   position: relative;
 }
 
-/* FORCES THE 2-LINE TEXT BREAK */
+/* THE TEXT - Forced to exactly 2 lines */
 .hero-text {
-  max-width: 600px; /* Exactly the width needed for 2 lines */
-  position: relative;
+  width: 55%; /* Takes up just over half the screen */
+  max-width: 700px;
   z-index: 2;
 }
 
 .hero-text h1 {
-  font-size: 3.5rem; /* Larger, like Figma */
-  line-height: 1.1;
+  font-size: 3.5rem; /* Large, matching Figma */
+  line-height: 1.15;
   margin-bottom: 20px;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
+/* Ensure paragraph breaks nicely */
 .hero-text p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   opacity: 0.95;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   line-height: 1.5;
+  max-width: 600px;
 }
 
 .btn {
@@ -191,13 +194,13 @@ body {
   color: #111;
 }
 
-/* THE COW IMAGE */
+/* THE COW */
 .hero-image {
   position: absolute;
-  right: -20px; /* Pushes it slightly to the edge */
-  bottom: -60px; /* Overlaps the white section exactly like Figma */
-  width: 45%; /* Takes up the right half */
-  max-width: 550px;
+  right: 0;
+  bottom: -70px; /* Hangs over the edge */
+  width: 45%; /* Takes up the right side */
+  max-width: 500px;
   z-index: 10;
 }
 
@@ -210,7 +213,7 @@ body {
 
 /* ===== SERVICES SECTION ===== */
 .services-preview {
-  padding: 40px 0 40px; /* Gives room for the cow to overlap */
+  padding: 50px 0 40px; /* Space for the cow overlap */
   background: var(--white);
   flex-grow: 1; 
   position: relative;
@@ -354,19 +357,21 @@ body {
   z-index: 999;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (Mobile) ===== */
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column;
     text-align: center;
-    padding-bottom: 150px; /* Make room for cow on mobile */
+    padding-bottom: 180px; 
   }
   .hero-text {
+    width: 100%;
     max-width: 100%;
   }
   .hero-text h1 { font-size: 2.5rem; }
+  .hero-text p { margin: 0 auto 30px auto; }
+  
   .hero-image {
-    position: absolute;
     right: 50%;
     transform: translateX(50%);
     bottom: -50px;
@@ -374,7 +379,7 @@ body {
     max-width: 350px;
   }
   .services-grid { grid-template-columns: 1fr; }
-  .services-preview { padding-top: 80px; } /* Push down past the cow */
+  .services-preview { padding-top: 80px; } 
   body { min-height: auto; }
 }
 
