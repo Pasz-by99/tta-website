@@ -43,7 +43,7 @@ body {
   min-height: 100vh;
 }
 
-/* ===== ANIMATIONS (play once on load) ===== */
+/* ===== ANIMATIONS ===== */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: none; }
@@ -92,7 +92,6 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  /* Dark-green overlay on top of the photo. If the photo is missing, the plain green still shows. */
   background:
     linear-gradient(90deg, rgba(15, 77, 42, 0.96) 0%, rgba(26, 107, 60, 0.88) 55%, rgba(26, 107, 60, 0.65) 100%),
     url('../images/hero-bg.jpg') center / cover no-repeat,
@@ -103,7 +102,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Soft curved edge at the bottom of the hero */
 .hero::after,
 .about-hero::after {
   content: '';
@@ -122,9 +120,7 @@ body {
   z-index: 2;
 }
 
-.hero-text {
-  max-width: 100%;
-}
+.hero-text { max-width: 100%; }
 
 .hero-text h1 {
   font-family: var(--font-display);
@@ -165,7 +161,6 @@ body {
 .btn-primary { background: var(--accent); color: #111; }
 .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(212, 160, 23, 0.35); }
 
-/* THE COW – starts near the top of the hero, hangs over the cards */
 .hero-image {
   position: absolute;
   right: 2%;
@@ -176,7 +171,6 @@ body {
   animation: fadeIn 0.9s ease 0.2s backwards;
 }
 
-/* Soft gold glow behind the cow */
 .hero-image::before {
   content: '';
   position: absolute;
@@ -207,7 +201,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Soft pattern: faint dots + green and gold glows */
   background:
     linear-gradient(var(--bg-light), rgba(248, 250, 247, 0)) 0 0 / 100% 70px no-repeat,
     radial-gradient(circle at 8% 18%, rgba(26, 107, 60, 0.10), transparent 38%),
@@ -263,7 +256,6 @@ body {
 .service-card:nth-child(2) { animation-delay: 0.40s; }
 .service-card:nth-child(3) { animation-delay: 0.50s; }
 
-/* Straight gold bar across the top of each card */
 .service-card::before {
   content: '';
   position: absolute;
@@ -302,69 +294,6 @@ body {
   font-weight: 700;
 }
 
-/* ===== FOOTER ===== */
-.footer {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
-  color: #d1d5db;
-  padding: 12px 0 6px;
-  flex-shrink: 0;
-  position: relative;
-  border-top: 4px solid var(--accent);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: space-between;
-  gap: 32px;
-  align-items: start;
-  font-size: 0.88rem;
-}
-
-.footer-brand { display: flex; align-items: center; gap: 14px; }
-.footer-brand img { height: 46px; width: auto; background: white; padding: 5px; border-radius: 10px; flex-shrink: 0; }
-.footer-brand p { font-family: var(--font-display); font-size: 0.9rem; line-height: 1.4; color: #e5e7eb; }
-.footer-brand strong { white-space: nowrap; display: block; color: var(--accent-light); font-size: 1.05rem; font-weight: 600; margin-bottom: 2px; }
-
-.footer h4 {
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--accent-light);
-  margin-bottom: 8px;
-}
-
-.footer-links { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 20px; }
-.footer-links li { white-space: nowrap; }
-.footer-links a { color: #e5e7eb !important; transition: color 0.2s, padding-left 0.2s; }
-.footer-links a:hover { color: var(--accent-light) !important; padding-left: 4px; }
-
-.footer-contact { display: flex; flex-wrap: nowrap; gap: 8px 20px; color: #e5e7eb; white-space: nowrap; }
-.footer-contact span { display: flex; align-items: center; gap: 10px; }
-.footer-contact i {
-  width: 26px;
-  height: 26px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(232, 185, 35, 0.15);
-  color: var(--accent-light);
-  font-size: 0.75rem;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 8px;
-  padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 0.75rem;
-  color: #cbd5d0;
-}
-
 /* ===== ABOUT PAGE ===== */
 .about-hero {
   background:
@@ -387,7 +316,6 @@ body {
   animation: fadeUp 0.7s ease backwards;
 }
 
-/* Vision & Mission */
 .vm-section {
   padding: 22px 0 12px;
   background:
@@ -401,9 +329,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 48px;
-  max-width: 58%; /* leaves room on the right for the founder photo */
+  max-width: 58%; 
 }
-/* Plain text blocks, no card or box – just a slim gold accent line */
 .vm-item {
   padding-left: 16px;
   border-left: 3px solid rgba(212, 160, 23, 0.7);
@@ -422,8 +349,6 @@ body {
 .vm-item h3 i { color: var(--accent); font-size: 1.05rem; }
 .vm-item p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
 
-/* Meet the Founder */
-/* The section fills the spare height so the photo always stands on the footer line */
 .founder-section { background: var(--white); flex-grow: 1; padding: 0; display: flex; }
 .founder-section > .container { display: flex; }
 .founder-grid {
@@ -458,7 +383,7 @@ body {
   margin: 0 auto 5px;
 }
 .founder-text strong { font-weight: 700; color: var(--primary-dark); }
-/* Bigger photo that rises up over the Vision/Mission band */
+
 .founder-photo {
   position: relative;
   z-index: 3;
@@ -469,39 +394,59 @@ body {
 }
 .founder-photo img { display: block; width: auto; max-width: none; height: min(450px, 58vh); }
 
-/* Avoid awkward one-word last lines */
 .founder-text p, .section-header p { text-wrap: balance; }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1200px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; justify-content: stretch; }
-  .footer-contact { flex-wrap: wrap; white-space: normal; }
+/* ===== FOOTER (Horizontal Grid) ===== */
+.footer {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
+  color: #d1d5db;
+  padding: 16px 0 10px; 
+  flex-shrink: 0;
+  position: relative;
+  border-top: 4px solid var(--accent);
 }
 
+.footer-grid {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.88rem;
+}
+
+/* Brand */
+.footer-brand { display: flex; align-items: center; gap: 12px; }
+.footer-brand img { height: 45px; width: auto; background: white; padding: 4px; border-radius: 8px; }
+.footer-brand-text strong { display: block; font-family: var(--font-display); color: var(--accent-light); font-size: 1.05rem; font-weight: 600; line-height: 1.2; }
+.footer-brand-text span { display: block; font-family: var(--font-display); color: #e5e7eb; font-size: 0.8rem; font-weight: 400; line-height: 1.2; }
+
+/* Links */
+.footer-col h4 { display: none; }
+.footer-links { list-style: none; display: flex; flex-direction: row; gap: 24px; margin: 0; padding: 0; }
+.footer-links a { color: #e5e7eb !important; font-family: var(--font-display); font-weight: 500; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent-light) !important; }
+
+/* Contact */
+.footer-contact { display: flex; flex-direction: row; gap: 24px; color: #e5e7eb; font-size: 0.85rem; }
+.footer-contact span { display: flex; align-items: center; gap: 8px; }
+.footer-contact i { color: var(--accent-light); }
+
+/* Bottom Copyright */
+.footer-bottom { text-align: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.75rem; color: #cbd5d0; }
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
   .hero { padding: 20px 0 170px; }
   .hero-text { text-align: center; }
   .hero-text h1 br { display: none; }
   .hero-text p { margin: 0 auto; }
-
-  .hero-image {
-    right: 50%;
-    top: auto;
-    transform: translateX(50%);
-    bottom: -20px;
-    width: 80%;
-    max-width: 300px;
-  }
-
+  .hero-image { right: 50%; top: auto; transform: translateX(50%); bottom: -20px; width: 80%; max-width: 300px; }
   .services-preview { padding-top: 40px; }
   .services-grid { grid-template-columns: 1fr; max-width: 420px; }
   body { min-height: auto; }
   .container { padding: 0 20px; }
-
-  .footer-grid { grid-template-columns: 1fr; gap: 22px; text-align: center; }
-  .footer-brand { justify-content: center; text-align: left; }
-  .footer-links { justify-content: center; }
-  .footer-contact { justify-content: center; }
 
   .about-hero { padding: 24px 0 50px; }
   .vm-grid { grid-template-columns: 1fr; gap: 18px; max-width: 520px; }
@@ -509,7 +454,12 @@ body {
   .founder-grid { grid-template-columns: 1fr; gap: 0; }
   .founder-text { padding: 30px 0 10px; }
   .founder-photo { justify-self: center; margin-top: 0; }
-  .vm-grid { max-width: 520px; }
+
+  /* Stack footer on mobile */
+  .footer-grid { flex-direction: column; text-align: center; gap: 20px; }
+  .footer-brand { justify-content: center; flex-direction: column; text-align: center; }
+  .footer-links { flex-direction: column; gap: 10px; align-items: center; }
+  .footer-contact { flex-direction: column; gap: 10px; align-items: center; }
 }
 
 @media (max-width: 768px) {
