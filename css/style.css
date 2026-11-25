@@ -501,20 +501,22 @@ body {
   padding: 30px 28px 26px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 16px;
 }
 .svc-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: var(--primary);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  box-shadow: 0 8px 18px rgba(26, 107, 60, 0.28);
 }
 .svc-head h2 {
   text-wrap: balance;
