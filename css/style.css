@@ -90,7 +90,7 @@ body {
 .nav-cta:hover { background: var(--primary-dark); transform: translateY(-2px); }
 .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; }
 
-/* ===== HERO SECTION (Home) ===== */
+/* ===== HERO SECTION ===== */
 .hero {
   background:
     linear-gradient(90deg, rgba(15, 77, 42, 0.96) 0%, rgba(26, 107, 60, 0.88) 55%, rgba(26, 107, 60, 0.65) 100%),
@@ -145,6 +145,125 @@ body {
   animation: fadeUp 0.7s ease 0.15s backwards;
 }
 
+/* About Page Hero Override */
+.page-hero {
+  padding: 40px 0 50px;
+}
+.page-hero .hero-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.page-hero .hero-text h1 {
+  font-size: 2.8rem;
+}
+.page-hero .hero-text p {
+  font-size: 1.1rem;
+  max-width: 100%;
+}
+
+/* ===== ABOUT PAGE SECTIONS ===== */
+.founder-section {
+  padding: 50px 0;
+  background: var(--white);
+  flex-grow: 1; /* Pushes footer down */
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.founder-text h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.gold-line {
+  width: 50px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.founder-text p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.founder-text strong {
+  color: var(--primary);
+}
+
+.founder-image {
+  position: relative;
+}
+
+.founder-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 2;
+}
+
+.founder-image::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Vision & Mission (No Containers) */
+.vision-mission {
+  padding: 50px 0;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(26, 107, 60, 0.10), transparent 38%),
+    radial-gradient(circle at 92% 88%, rgba(212, 160, 23, 0.12), transparent 40%),
+    radial-gradient(rgba(26, 107, 60, 0.10) 1px, transparent 1.4px) 0 0 / 22px 22px,
+    var(--bg-light);
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.vm-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vm-item h3 i {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.vm-item p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ===== BUTTONS & SERVICES (Home Page) ===== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -193,7 +312,6 @@ body {
   filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.22));
 }
 
-/* ===== SERVICES SECTION (Home) ===== */
 .services-preview {
   padding: 8px 0 24px;
   flex-grow: 1;
@@ -294,132 +412,6 @@ body {
   font-weight: 700;
 }
 
-/* ===== ABOUT PAGE SPECIFIC STYLES ===== */
-.page-hero {
-  padding: 40px 0 60px; /* Adjusted for text only */
-}
-
-/* Founder Section */
-.founder-section {
-  padding: 60px 0;
-  background: var(--white);
-}
-
-.founder-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.founder-text h2 {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--primary-dark);
-  margin-bottom: 10px;
-}
-
-.gold-line {
-  width: 60px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 2px;
-  margin-bottom: 24px;
-}
-
-.founder-text p {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.founder-text strong {
-  color: var(--primary);
-}
-
-.founder-image {
-  position: relative;
-}
-
-.founder-image img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  position: relative;
-  z-index: 2;
-}
-
-/* Decorative background block behind the image */
-.founder-image::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 100%;
-  height: 100%;
-  border: 3px solid var(--accent);
-  border-radius: 20px;
-  z-index: 1;
-}
-
-/* Vision & Mission Section */
-.vision-mission {
-  padding: 60px 0;
-  background:
-    radial-gradient(circle at 8% 18%, rgba(26, 107, 60, 0.10), transparent 38%),
-    radial-gradient(circle at 92% 88%, rgba(212, 160, 23, 0.12), transparent 40%),
-    radial-gradient(rgba(26, 107, 60, 0.10) 1px, transparent 1.4px) 0 0 / 22px 22px,
-    var(--bg-light);
-}
-
-.vm-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.vm-card {
-  background: white;
-  padding: 40px;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  border-top: 4px solid var(--primary);
-  transition: transform 0.3s;
-}
-
-.vm-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-}
-
-.vm-icon {
-  width: 60px;
-  height: 60px;
-  background: #e8f5e9;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-.vm-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--primary-dark);
-  margin-bottom: 12px;
-}
-
-.vm-card p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
 /* ===== FOOTER ===== */
 .footer {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
@@ -477,14 +469,13 @@ body {
   body { min-height: auto; }
   .container { padding: 0 20px; }
 
-  /* About Page responsive */
   .founder-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-  .gold-line { margin: 0 auto 24px auto; }
+  .gold-line { margin: 0 auto 20px auto; }
   .founder-image { display: flex; justify-content: center; }
   .founder-image::before { display: none; }
-  .vm-grid { grid-template-columns: 1fr; }
+  
+  .vm-grid { grid-template-columns: 1fr; gap: 30px; }
 
-  /* Stack footer on mobile */
   .footer-grid { flex-direction: column; text-align: center; gap: 20px; }
   .footer-brand { justify-content: center; flex-direction: column; text-align: center; }
   .footer-links { flex-direction: column; gap: 10px; align-items: center; }
