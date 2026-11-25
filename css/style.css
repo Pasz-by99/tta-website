@@ -500,9 +500,12 @@ body {
   background: linear-gradient(160deg, #f3faf4, #e2f1e6);
   padding: 30px 26px 26px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 14px 16px;
 }
 .svc-num {
   font-family: var(--font-display);
@@ -523,6 +526,7 @@ body {
   font-size: 1.3rem;
 }
 .svc-head h2 {
+  flex-basis: 100%;
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 1.7vw, 1.5rem);
   font-weight: 700;
