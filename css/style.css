@@ -32,7 +32,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* Wide container */
   margin: 0 auto;
   padding: 0 40px; 
 }
@@ -69,7 +69,7 @@ body {
 .hero {
   background: var(--primary);
   color: white;
-  padding: 80px 0 80px;
+  padding: 70px 0 80px; /* Balanced height */
   position: relative;
   flex-shrink: 0;
 }
@@ -79,12 +79,14 @@ body {
   z-index: 2;
 }
 
+/* Forces exactly 2 lines on desktop */
 .hero-text {
-  max-width: 850px; /* Gives the text plenty of room so it doesn't wrap into 3 lines */
+  max-width: 65%; /* Takes up left side, leaves room for cow */
 }
 
 .hero-text h1 {
-  font-size: 3.5rem; 
+  /* Dynamically scales between 2.5rem and 3.5rem depending on screen width */
+  font-size: clamp(2.5rem, 4vw, 3.5rem); 
   line-height: 1.1;
   margin-bottom: 20px;
   font-weight: 800;
@@ -96,7 +98,7 @@ body {
   opacity: 0.95;
   margin-bottom: 32px;
   line-height: 1.5;
-  max-width: 650px;
+  max-width: 600px;
 }
 
 .btn {
@@ -116,12 +118,12 @@ body {
 .btn-outline:hover { background: white; color: var(--primary); }
 .btn-primary { background: var(--accent); color: #111; }
 
-/* THE COW - Absolute positioning to make it hang over the white section */
+/* THE COW - Hangs over the white edge */
 .hero-image {
   position: absolute;
-  right: 5%; /* Sits slightly away from the right edge */
-  bottom: -80px; /* Pulls it down into the white area */
-  width: 45%; 
+  right: 5%; /* Safe distance from the right edge */
+  bottom: -80px; /* Pulls the cow down into the white section */
+  width: 40%; 
   max-width: 500px;
   z-index: 10;
 }
@@ -135,7 +137,7 @@ body {
 
 /* ===== SERVICES SECTION ===== */
 .services-preview {
-  padding: 50px 0 40px; /* Extra top padding so the cow doesn't cover the title */
+  padding: 60px 0 40px; /* Top padding gives room for the cow */
   background: var(--white);
   flex-grow: 1; 
   position: relative;
@@ -169,11 +171,9 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
-  .hero { padding: 60px 0 200px; } /* Push down so cow doesn't overlap text */
+  .hero { padding: 50px 0 200px; } 
   .hero-text { max-width: 100%; text-align: center; }
-  .hero-text h1 { font-size: 2.5rem; }
   .hero-text p { margin: 0 auto 30px auto; }
-  .hero-text h1 br { display: none; } /* Let text wrap naturally on mobile */
   
   .hero-image {
     right: 50%;
@@ -193,7 +193,6 @@ body {
   .menu-toggle { display: block; }
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
   .nav-links.active { display: flex; }
-  .hero-text h1 { font-size: 2rem; }
   .footer-compact { flex-direction: column; text-align: center; }
   .footer-links, .footer-contact { flex-direction: column; gap: 10px; }
 }
