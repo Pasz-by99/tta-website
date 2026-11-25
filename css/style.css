@@ -74,7 +74,11 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background: var(--primary);
+  /* Dark-green overlay on top of the photo. If the photo is missing, the plain green still shows. */
+  background:
+    linear-gradient(90deg, rgba(15, 77, 42, 0.96) 0%, rgba(26, 107, 60, 0.88) 55%, rgba(26, 107, 60, 0.65) 100%),
+    url('../images/hero-bg.jpg') center / cover no-repeat,
+    var(--primary);
   color: white;
   padding: 2px 0 22px;
   position: relative;
@@ -137,6 +141,20 @@ body {
   z-index: 10;
 }
 
+/* Soft gold glow behind the cow */
+.hero-image::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 130%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(232, 185, 35, 0.35) 0%, rgba(232, 185, 35, 0) 65%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .hero-image img {
   display: block;
   width: 100%;
@@ -147,7 +165,7 @@ body {
 /* ===== SERVICES SECTION ===== */
 .services-preview {
   padding: 10px 0 50px;
-  background: var(--white);
+  background: var(--bg-light);
   flex-grow: 1;
   position: relative;
   z-index: 5;
@@ -160,6 +178,15 @@ body {
   font-weight: 700;
   color: var(--primary-dark);
   margin-bottom: 2px;
+}
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 6px auto 8px;
+  border-radius: 3px;
+  background: var(--accent);
 }
 .section-header p {
   font-family: var(--font-display);
@@ -182,6 +209,12 @@ body {
   border-radius: 20px;
   padding: 22px 24px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  border-top: 3px solid var(--accent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
 }
 .service-icon {
   width: 48px;
@@ -195,7 +228,7 @@ body {
   color: var(--primary);
   margin-bottom: 18px;
 }
-.service-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: var(--primary-dark); }
+.service-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: var(--primary-dark); min-height: 2.7em; }
 .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
 .view-all-container { text-align: center; }
@@ -234,6 +267,7 @@ body {
 
   .services-preview { padding-top: 40px; }
   .services-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .service-card h3 { min-height: 0; }
   body { min-height: auto; }
   .container { padding: 0 20px; }
 }
