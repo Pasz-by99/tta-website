@@ -1,4 +1,4 @@
-/* ===== Tinahls Triad Agro – Main Stylesheet (final) ===== */
+/* ===== Tinahls Triad Agro – Main Stylesheet (Fluid & Responsive) ===== */
 :root {
   --primary: #1a6b3c;
   --primary-dark: #0f4d2a;
@@ -102,8 +102,7 @@ body {
   flex-shrink: 0;
 }
 
-.hero::after,
-.about-hero::after {
+.hero::after, .about-hero::after {
   content: '';
   position: absolute;
   left: 0;
@@ -120,11 +119,13 @@ body {
   z-index: 2;
 }
 
-.hero-text { max-width: 100%; }
+.hero-text {
+  max-width: 100%;
+}
 
 .hero-text h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, min(5.4vw, 7vh), 4.2rem);
+  font-size: clamp(2.2rem, min(5.4vw, 7vh), 4.2rem); /* Fluid typography */
   line-height: 1.05;
   margin-bottom: 12px;
   font-weight: 700;
@@ -136,7 +137,7 @@ body {
 
 .hero-text p {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.2vw, 1.15rem); /* Fluid typography */
   opacity: 0.95;
   margin-bottom: 0;
   line-height: 1.35;
@@ -212,7 +213,7 @@ body {
 .section-header { text-align: center; margin-bottom: 14px; animation: fadeUp 0.7s ease 0.25s backwards; }
 .section-header h2 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
   font-weight: 700;
   color: var(--primary-dark);
   margin-bottom: 2px;
@@ -229,7 +230,7 @@ body {
 .section-header p {
   font-family: var(--font-display);
   color: var(--primary-dark);
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   font-weight: 400;
   line-height: 1.25;
 }
@@ -396,7 +397,7 @@ body {
 
 .founder-text p, .section-header p { text-wrap: balance; }
 
-/* ===== FOOTER (Horizontal Grid) ===== */
+/* ===== FOOTER ===== */
 .footer {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
   color: #d1d5db;
@@ -416,27 +417,23 @@ body {
   font-size: 0.88rem;
 }
 
-/* Brand */
 .footer-brand { display: flex; align-items: center; gap: 12px; }
 .footer-brand img { height: 45px; width: auto; background: white; padding: 4px; border-radius: 8px; }
 .footer-brand-text strong { display: block; font-family: var(--font-display); color: var(--accent-light); font-size: 1.05rem; font-weight: 600; line-height: 1.2; }
 .footer-brand-text span { display: block; font-family: var(--font-display); color: #e5e7eb; font-size: 0.8rem; font-weight: 400; line-height: 1.2; }
 
-/* Links */
 .footer-col h4 { display: none; }
 .footer-links { list-style: none; display: flex; flex-direction: row; gap: 24px; margin: 0; padding: 0; }
 .footer-links a { color: #e5e7eb !important; font-family: var(--font-display); font-weight: 500; transition: color 0.2s; }
 .footer-links a:hover { color: var(--accent-light) !important; }
 
-/* Contact */
 .footer-contact { display: flex; flex-direction: row; gap: 24px; color: #e5e7eb; font-size: 0.85rem; }
 .footer-contact span { display: flex; align-items: center; gap: 8px; }
 .footer-contact i { color: var(--accent-light); }
 
-/* Bottom Copyright */
 .footer-bottom { text-align: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.75rem; color: #cbd5d0; }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE FIXES ===== */
 @media (max-width: 992px) {
   .hero { padding: 20px 0 170px; }
   .hero-text { text-align: center; }
