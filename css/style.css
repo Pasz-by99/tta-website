@@ -22,12 +22,20 @@
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: var(--text-dark);
-  line-height: 1.4; /* Tighter line height for space */
+  line-height: 1.4;
   background: var(--white);
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Locks the page to the screen */
+  min-height: 100vh; 
+}
+
+/* ===== CONTAINER (Fixes the edge-touching) ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px; /* Added 40px padding to keep content away from edges */
 }
 
 /* ===== HEADER ===== */
@@ -43,7 +51,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0; /* Reduced padding */
+  padding: 10px 0; 
 }
 
 .logo {
@@ -53,7 +61,7 @@ body {
 }
 
 .logo img {
-  height: 45px; /* Slightly smaller to save height */
+  height: 45px; 
   width: auto;
 }
 
@@ -120,7 +128,7 @@ body {
 .hero {
   background: var(--primary);
   color: white;
-  padding: 30px 0 40px; /* Much tighter padding */
+  padding: 30px 0 40px; 
   position: relative;
   flex-shrink: 0;
 }
@@ -128,13 +136,13 @@ body {
 .hero-content {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
   position: relative;
 }
 
 .hero-text h1 {
-  font-size: 3rem; /* Slightly smaller to fit */
+  font-size: 3rem; 
   line-height: 1.1;
   margin-bottom: 12px;
   font-weight: 800;
@@ -166,10 +174,6 @@ body {
   color: #111;
 }
 
-.btn-primary:hover {
-  background: var(--accent-light);
-}
-
 .btn-outline {
   background: transparent;
   color: white;
@@ -192,7 +196,7 @@ body {
 
 .hero-image img {
   width: 100%;
-  max-width: 400px; /* Controls cow size */
+  max-width: 420px; 
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
@@ -296,7 +300,6 @@ body {
   list-style: none;
 }
 
-/* FIXED FOOTER LINKS */
 .footer-links a {
   color: #e5e7eb !important; 
   transition: color 0.2s;
@@ -358,6 +361,7 @@ body {
   }
   .services-grid { grid-template-columns: 1fr; }
   body { min-height: auto; }
+  .container { padding: 0 20px; } /* Adjust padding for mobile */
 }
 
 @media (max-width: 768px) {
