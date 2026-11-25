@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Tinahls Triad Agro CC</title>
   <meta name="description" content="Learn about Tinahls Triad Agro CC – our mission, vision, values and the team empowering Namibian farmers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- Header -->
   <header class="header">
     <div class="container">
       <nav class="nav">
@@ -20,7 +24,9 @@
             <span>Your Partner in Agro Prosperity</span>
           </div>
         </a>
-        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="active">About</a></li>
@@ -32,93 +38,74 @@
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1>About Tinahls Triad Agro</h1>
-      <p>Empowering farmers and students through knowledge, innovation and sustainable practices</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <!-- Ensure this file exists in your GitHub images folder -->
-          <img src="images/founder-field.jpg" alt="Founder of Tinahls Triad Agro" />
-        </div>
-        <div class="about-content">
-          <span class="section-label">Our Story</span>
-          <h2>Transforming Agriculture in Namibia</h2>
-          <p>Tinahls Triad Agro CC is an emerging Namibian agribusiness dedicated to transforming the agricultural sector through innovation, education and sustainable farming practices.</p>
-          <p>We focus on livestock production, crop farming and farming capacity development, with a strong emphasis on empowering both smallholder and commercial farmers. Our goal is to bridge the gap between theoretical knowledge and practical application.</p>
-          <p>Based in Ekuku, Oshakati, we serve farmers, students and agripreneurs across all 14 regions of Namibia.</p>
-        </div>
+  <!-- Page Hero (Curved Green Background) -->
+  <section class="hero page-hero">
+    <div class="container hero-container">
+      <div class="hero-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h1>Transforming Agriculture in Namibia</h1>
+        <p>Tinahls Triad Agro CC is an emerging Namibian agribusiness dedicated to transforming the agricultural sector through innovation, education and sustainable farming practices. We focus on livestock production, crop farming and farming capacity development.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background: var(--bg-light);">
+  <!-- Founder Section -->
+  <section class="founder-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">Who We Are</span>
-        <h2>Vision, Mission & Values</h2>
-      </div>
+      <div class="founder-grid">
+        
+        <!-- Text Left -->
+        <div class="founder-text">
+          <h2>Meet the Founder</h2>
+          <div class="gold-line"></div>
+          <p><strong>Albertina Nalukale Mewiliko Shiimi</strong> is the Chief Executive Officer and Founder of Tinahls Triad Agro CC. She brings a strong background in animal production, agribusiness and agricultural training.</p>
+          <p>With experience in project planning, farm management and stakeholder engagement, she provides overall leadership and strategic direction for the company.</p>
+          <p>Her passion is to equip farmers and students with practical skills that translate into real productivity and profitability on the ground.</p>
+        </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-eye"></i></div>
+        <!-- Image Right -->
+        <div class="founder-image">
+          <img src="images/founder-office.png" alt="Albertina Shiimi - Founder" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission Section -->
+  <section class="vision-mission">
+    <div class="container">
+      <div class="vm-grid">
+        
+        <div class="vm-card">
+          <div class="vm-icon"><i class="fas fa-eye"></i></div>
           <h3>Our Vision</h3>
           <p>To become a leading agribusiness in Namibia and beyond, recognised for empowering farmers and advancing sustainable agricultural development.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+
+        <div class="vm-card">
+          <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
           <h3>Our Mission</h3>
           <p>To provide high-quality agricultural training, advisory services and innovative solutions that enhance productivity, profitability and sustainability in livestock and crop production.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-heart"></i></div>
-          <h3>Our Core Values</h3>
-          <p><strong>Integrity</strong> • <strong>Innovation</strong> • <strong>Sustainability</strong> • <strong>Empowerment</strong> • <strong>Excellence</strong></p>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-content">
-          <span class="section-label">Leadership</span>
-          <h2>Meet the Founder</h2>
-          <p><strong>Albertina Nalukale Mewiliko Shiimi</strong> is the Chief Executive Officer and Founder of Tinahls Triad Agro CC.</p>
-          <p>She brings a strong background in animal production, agribusiness and agricultural training. With experience in project planning, farm management and stakeholder engagement, she provides overall leadership and strategic direction for the company.</p>
-          <p>Her passion is to equip farmers and students with practical skills that translate into real productivity and profitability on the ground.</p>
-        </div>
-        <div class="about-image">
-          <img src="images/founder-office.png" alt="Albertina Shiimi - Founder" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-banner">
-    <div class="container">
-      <h2>Want to work with us?</h2>
-      <p>Whether you are a farmer, student or organisation — let’s build a more productive and sustainable agricultural future together.</p>
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="images/logo1.png" alt="Tinahls Triad Agro" />
-          <p>Empowering Namibian farmers and students through quality training, practical solutions and sustainable farming practices.</p>
+          <div class="footer-brand-text">
+            <strong>Tinahls Triad Agro CC</strong>
+            <span>Your Partner in Agro Prosperity</span>
+          </div>
         </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
+
+        <div class="footer-col">
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
@@ -126,34 +113,21 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html">Farm Consultancy</a></li>
-            <li><a href="training.html">Workshops</a></li>
-            <li><a href="services.html">Livestock Support</a></li>
-            <li><a href="services.html">Input Supply</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Ekuku, Oshakati</li>
-            <li><i class="fas fa-phone"></i> +264 81 705 0652</li>
-            <li><i class="fas fa-phone"></i> +264 81 318 8489</li>
-            <li><i class="fas fa-envelope"></i> tinahsagrotriad@gmail.com</li>
-          </ul>
+
+        <div class="footer-col">
+          <div class="footer-contact">
+            <span><i class="fas fa-map-marker-alt"></i> Ekuku, Oshakati</span>
+            <span><i class="fas fa-phone"></i> +264 81 705 0652</span>
+            <span><i class="fas fa-envelope"></i> tinahsagrotriad@gmail.com</span>
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 Tinahls Triad Agro CC. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-  <a href="https://wa.me/264817050652" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 
   <script src="js/main.js"></script>
 </body>
