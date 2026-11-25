@@ -1,4 +1,11 @@
-/* ===== Tinahls Triad Agro – Main Stylesheet (Fluid & Responsive) ===== */
+/* ===== Tinahls Triad Agro – Main Stylesheet (fully responsive) =====
+   Breakpoints used:
+   - 1240px : footer stacks
+   - 1100px : hero + founder stack (tablets / small laptops)
+   - 900px  : mobile menu
+   - 700px  : phones (single column)
+   - 480px  : small phones
+*/
 :root {
   --primary: #1a6b3c;
   --primary-dark: #0f4d2a;
@@ -22,7 +29,9 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+img { max-width: 100%; }
 
 a { text-decoration: none; }
 a:focus-visible,
@@ -83,12 +92,12 @@ body {
 .logo-text span { display: block; font-size: 0.75rem; font-weight: 500; color: var(--text-muted); }
 
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-.nav-links a { font-family: var(--font-display); font-weight: 500; color: var(--text-dark); font-size: 0.95rem; transition: color 0.2s; position: relative; }
+.nav-links a { font-family: var(--font-display); font-weight: 500; color: var(--text-dark); font-size: 0.95rem; transition: color 0.2s; position: relative; white-space: nowrap; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background: var(--primary); }
 .nav-cta { background: var(--primary); color: white !important; padding: 10px 24px; border-radius: 50px; transition: background 0.25s, transform 0.25s; }
 .nav-cta:hover { background: var(--primary-dark); transform: translateY(-2px); }
-.menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+.menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; padding: 8px; }
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -102,7 +111,9 @@ body {
   flex-shrink: 0;
 }
 
-.hero::after, .about-hero::after {
+/* Soft curved edge at the bottom of the green sections */
+.hero::after,
+.about-hero::after {
   content: '';
   position: absolute;
   left: 0;
@@ -125,7 +136,8 @@ body {
 
 .hero-text h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, min(5.4vw, 7vh), 4.2rem); /* Fluid typography */
+  /* Sized so the heading never runs into the cow on laptops */
+  font-size: clamp(1.7rem, min(3.9vw, 7vh), 4.2rem);
   line-height: 1.05;
   margin-bottom: 12px;
   font-weight: 700;
@@ -137,7 +149,7 @@ body {
 
 .hero-text p {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 1.2vw, 1.15rem); /* Fluid typography */
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
   opacity: 0.95;
   margin-bottom: 0;
   line-height: 1.35;
@@ -162,9 +174,11 @@ body {
 .btn-primary { background: var(--accent); color: #111; }
 .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(212, 160, 23, 0.35); }
 
+/* THE COW – desktop: sits on the right and hangs over the cards.
+   On very wide screens it stays next to the content instead of the screen edge. */
 .hero-image {
   position: absolute;
-  right: 2%;
+  right: max(2%, calc((100% - 1300px) / 2 + 20px));
   top: 40px;
   width: 29%;
   max-width: 320px;
@@ -213,7 +227,7 @@ body {
 .section-header { text-align: center; margin-bottom: 14px; animation: fadeUp 0.7s ease 0.25s backwards; }
 .section-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: 700;
   color: var(--primary-dark);
   margin-bottom: 2px;
@@ -235,14 +249,18 @@ body {
   line-height: 1.25;
 }
 
+/* Cards wrap by themselves: 3 in a row on desktop, 2 + 1 on tablets, 1 on phones */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 28px;
   max-width: 1000px;
   margin: 0 auto 18px;
 }
 .service-card {
+  flex: 1 1 270px;
+  max-width: 330px;
   position: relative;
   overflow: hidden;
   background: white;
@@ -309,7 +327,7 @@ body {
 .about-hero .container { position: relative; z-index: 2; }
 .about-hero p {
   font-family: var(--font-display);
-  font-size: clamp(0.98rem, 1.15vw, 1.15rem);
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
   line-height: 1.4;
   max-width: 1150px;
   color: var(--cream);
@@ -317,6 +335,7 @@ body {
   animation: fadeUp 0.7s ease backwards;
 }
 
+/* Vision & Mission */
 .vm-section {
   padding: 22px 0 12px;
   background:
@@ -330,7 +349,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 48px;
-  max-width: 58%; 
+  max-width: 58%; /* leaves room on the right for the founder photo */
 }
 .vm-item {
   padding-left: 16px;
@@ -350,6 +369,7 @@ body {
 .vm-item h3 i { color: var(--accent); font-size: 1.05rem; }
 .vm-item p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
 
+/* Meet the Founder */
 .founder-section { background: var(--white); flex-grow: 1; padding: 0; display: flex; }
 .founder-section > .container { display: flex; }
 .founder-grid {
@@ -362,7 +382,7 @@ body {
 .founder-text { text-align: center; align-self: center; padding: 8px 0 14px; animation: fadeUp 0.7s ease 0.2s backwards; }
 .founder-text h2 {
   font-family: var(--font-display);
-  font-size: 2.05rem;
+  font-size: clamp(1.7rem, 2vw, 2.05rem);
   font-weight: 700;
   color: var(--primary-dark);
 }
@@ -377,7 +397,7 @@ body {
 }
 .founder-text p {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
   line-height: 1.4;
   color: var(--text-dark);
   max-width: 740px;
@@ -385,6 +405,7 @@ body {
 }
 .founder-text strong { font-weight: 700; color: var(--primary-dark); }
 
+/* Big photo that rises over the Vision/Mission band and stands on the footer line */
 .founder-photo {
   position: relative;
   z-index: 3;
@@ -393,7 +414,7 @@ body {
   margin-top: -150px;
   animation: fadeIn 0.9s ease 0.3s backwards;
 }
-.founder-photo img { display: block; width: auto; max-width: none; height: min(450px, 58vh); }
+.founder-photo img { display: block; width: auto; max-width: none; height: min(450px, 58vh, 30vw); }
 
 .founder-text p, .section-header p { text-wrap: balance; }
 
@@ -401,7 +422,7 @@ body {
 .footer {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
   color: #d1d5db;
-  padding: 16px 0 10px; 
+  padding: 16px 0 10px;
   flex-shrink: 0;
   position: relative;
   border-top: 4px solid var(--accent);
@@ -409,7 +430,7 @@ body {
 
 .footer-grid {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -419,50 +440,98 @@ body {
 
 .footer-brand { display: flex; align-items: center; gap: 12px; }
 .footer-brand img { height: 45px; width: auto; background: white; padding: 4px; border-radius: 8px; }
-.footer-brand-text strong { display: block; font-family: var(--font-display); color: var(--accent-light); font-size: 1.05rem; font-weight: 600; line-height: 1.2; }
+.footer-brand-text strong { display: block; font-family: var(--font-display); color: var(--accent-light); font-size: 1.05rem; font-weight: 600; line-height: 1.2; white-space: nowrap; }
 .footer-brand-text span { display: block; font-family: var(--font-display); color: #e5e7eb; font-size: 0.8rem; font-weight: 400; line-height: 1.2; }
 
 .footer-col h4 { display: none; }
 .footer-links { list-style: none; display: flex; flex-direction: row; gap: 24px; margin: 0; padding: 0; }
-.footer-links a { color: #e5e7eb !important; font-family: var(--font-display); font-weight: 500; transition: color 0.2s; }
+.footer-links a { color: #e5e7eb !important; font-family: var(--font-display); font-weight: 500; transition: color 0.2s; white-space: nowrap; }
 .footer-links a:hover { color: var(--accent-light) !important; }
 
 .footer-contact { display: flex; flex-direction: row; gap: 24px; color: #e5e7eb; font-size: 0.85rem; }
-.footer-contact span { display: flex; align-items: center; gap: 8px; }
+.footer-contact span { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .footer-contact i { color: var(--accent-light); }
 
 .footer-bottom { text-align: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.75rem; color: #cbd5d0; }
 
-/* ===== RESPONSIVE FIXES ===== */
-@media (max-width: 992px) {
-  .hero { padding: 20px 0 170px; }
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+/* ---- Small laptops: footer stacks neatly in the centre ---- */
+@media (max-width: 1240px) {
+  .footer-grid { flex-direction: column; text-align: center; gap: 14px; }
+  .footer-brand { justify-content: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 8px 22px; }
+  .footer-contact { flex-wrap: wrap; justify-content: center; gap: 8px 22px; }
+}
+
+/* ---- Tablets and small laptops: stack hero + founder ---- */
+@media (max-width: 1100px) {
+  body { min-height: auto; }
+
+  /* Hero: text centred, cow sits underneath and overlaps the section below */
+  .hero { padding: 14px 0 0; }
   .hero-text { text-align: center; }
   .hero-text h1 br { display: none; }
   .hero-text p { margin: 0 auto; }
-  .hero-image { right: 50%; top: auto; transform: translateX(50%); bottom: -20px; width: 80%; max-width: 300px; }
-  .services-preview { padding-top: 40px; }
-  .services-grid { grid-template-columns: 1fr; max-width: 420px; }
-  body { min-height: auto; }
-  .container { padding: 0 20px; }
+  .hero-image {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: min(62vw, 300px);
+    max-width: none;
+    margin: 18px auto -40px;
+  }
+  .services-preview { padding: 64px 0 28px; justify-content: flex-start; }
 
-  .about-hero { padding: 24px 0 50px; }
-  .vm-grid { grid-template-columns: 1fr; gap: 18px; max-width: 520px; }
-  .founder-photo img { height: auto; max-width: 320px; }
-  .founder-grid { grid-template-columns: 1fr; gap: 0; }
-  .founder-text { padding: 30px 0 10px; }
-  .founder-photo { justify-self: center; margin-top: 0; }
+  /* About */
+  .about-hero { padding: 18px 0 40px; }
+  .vm-section { padding: 26px 0 26px; }
+  .vm-grid { max-width: none; gap: 28px; }
 
-  /* Stack footer on mobile */
-  .footer-grid { flex-direction: column; text-align: center; gap: 20px; }
-  .footer-brand { justify-content: center; flex-direction: column; text-align: center; }
-  .footer-links { flex-direction: column; gap: 10px; align-items: center; }
-  .footer-contact { flex-direction: column; gap: 10px; align-items: center; }
+  .founder-section { display: block; }
+  .founder-section > .container { display: block; }
+  .founder-grid { display: block; }
+  .founder-text { padding: 30px 0 14px; }
+  .founder-photo { display: flex; justify-content: center; margin-top: 0; }
+  .founder-photo img { height: auto; width: min(80%, 360px); }
 }
 
-@media (max-width: 768px) {
+/* ---- Mobile menu ---- */
+@media (max-width: 900px) {
   .menu-toggle { display: block; }
-  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
   .nav-links.active { display: flex; }
+}
+
+/* ---- Phones ---- */
+@media (max-width: 700px) {
+  .container { padding: 0 16px; }
+  .vm-grid { grid-template-columns: 1fr; gap: 20px; }
+  .services-grid { gap: 18px; }
+  .service-card { flex-basis: 100%; max-width: 420px; }
+  .footer-contact { flex-direction: column; align-items: center; gap: 10px; }
+  .footer-links { gap: 8px 18px; }
+}
+
+@media (max-width: 480px) {
+  .logo img { height: 40px; }
+  .logo-text { font-size: 1rem; }
+  .logo-text span { font-size: 0.66rem; }
+  .founder-photo img { width: min(88%, 320px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
