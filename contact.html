@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Tinahls Triad Agro CC</title>
-  <meta name="description" content="Get in touch with Tinahls Triad Agro CC in Oshakati, Namibia. Call, WhatsApp or send us a message." />
+  <meta name="description" content="Get in touch with Tinahls Triad Agro CC in Ekuku, Oshakati for training, consultancy or any agricultural enquiry." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -20,13 +23,15 @@
             <span>Your Partner in Agro Prosperity</span>
           </div>
         </a>
-        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="training.html">Training</a></li>
-          <li><a href="contact.html" class="active nav-cta">Contact Us</a></li>
+          <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
         </ul>
       </nav>
     </div>
@@ -35,79 +40,54 @@
   <section class="page-hero">
     <div class="container">
       <h1>Get In Touch</h1>
-      <p>We would love to hear from you. Reach out for training, consultancy or any enquiry.</p>
+      <p class="page-sub">We would love to hear from you. Reach out for training, consultancy or any enquiry.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div>
-          <div class="contact-info-card">
-            <h3><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Address</h3>
-            <p>Erf 1642, Omusisiti Street<br>Ekuku, Oshakati<br>Oshana Region</p>
-          </div>
+  <section class="ct-section">
+    <div class="container ct-grid">
 
-          <div class="contact-info-card">
-            <h3><i class="fas fa-phone" style="color:var(--primary)"></i> Phone</h3>
-            <p>
-              <a href="tel:+264817050652">+264 81 705 0652</a><br>
-              <a href="tel:+264813188489">+264 81 318 8489</a>
-            </p>
-          </div>
-
-          <div class="contact-info-card">
-            <h3><i class="fas fa-envelope" style="color:var(--primary)"></i> Email</h3>
-            <p><a href="mailto:tinahsagrotriad@gmail.com">tinahsagrotriad@gmail.com</a></p>
-          </div>
-
-          <div class="contact-info-card">
-            <h3><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</h3>
-            <p><a href="https://wa.me/264817050652" target="_blank">Chat with us on WhatsApp</a></p>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form">
-          <h2 style="margin-bottom: 8px; color: var(--primary-dark);">Send us a message</h2>
-          <p style="color: var(--text-muted); margin-bottom: 24px;">Fill in the form and we will get back to you as soon as possible.</p>
-
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" />
-            </div>
-            <div class="form-group">
-              <label for="service">I’m interested in</label>
-              <select id="service" name="service">
-                <option value="">Select an option</option>
-                <option value="Training / Workshop">Training / Workshop</option>
-                <option value="Farm Consultancy">Farm Consultancy</option>
-                <option value="Livestock Support">Livestock Support</option>
-                <option value="Crop Production">Crop Production</option>
-                <option value="Input Supply">Input Supply</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" required placeholder="Tell us briefly what you need..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;">
-              Send Message
-            </button>
-          </form>
-        </div>
+      <div class="ct-info">
+        <div class="ct-item"><div class="ct-icon"><i class="fas fa-location-dot"></i></div>
+          <div><h3>Address</h3><p>Erf 1642, Omusisiti Street<br />Ekuku, Oshakati, Oshana Region</p></div></div>
+        <div class="ct-item"><div class="ct-icon"><i class="fas fa-phone"></i></div>
+          <div><h3>Phone</h3><p><a href="tel:+264817050652">+264 81 705 0652</a><br /><a href="tel:+264813188489">+264 81 318 8489</a></p></div></div>
+        <div class="ct-item"><div class="ct-icon"><i class="fas fa-envelope"></i></div>
+          <div><h3>Email</h3><p><a href="mailto:tinahsagrotriad@gmail.com">tinahsagrotriad@gmail.com</a></p></div></div>
+        <div class="ct-item"><div class="ct-icon ct-wa"><i class="fab fa-whatsapp"></i></div>
+          <div><h3>WhatsApp</h3><p><a href="https://wa.me/264817050652" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p></div></div>
       </div>
+
+      <div class="ct-form-card">
+        <h2>Send us a message</h2>
+        <p class="ct-lead">Fill in the form and we will get back to you as soon as possible.</p>
+        <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="ct-hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <div class="ct-row">
+            <label>Full Name *<input type="text" name="name" required autocomplete="name" /></label>
+            <label>Phone Number *<input type="tel" name="phone" required autocomplete="tel" /></label>
+          </div>
+          <div class="ct-row">
+            <label>Email Address<input type="email" name="email" autocomplete="email" /></label>
+            <label>I&rsquo;m interested in
+              <select name="interest">
+                <option value="">Select an option</option>
+                <option>Training / Workshop</option>
+                <option>Farm Consultancy</option>
+                <option>Livestock Support</option>
+                <option>Crop Production</option>
+                <option>Input Supply</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+          <label>Message *<textarea name="message" rows="3" required></textarea></label>
+          <button type="submit" class="btn btn-primary btn-cta">Send Message <i class="fas fa-paper-plane"></i></button>
+          <p class="ct-status" id="ctStatus" role="status"></p>
+        </form>
+      </div>
+
     </div>
   </section>
 
@@ -116,11 +96,14 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="images/logo1.png" alt="Tinahls Triad Agro" />
-          <p>Empowering Namibian farmers and students through quality training, practical solutions and sustainable farming practices.</p>
+          <div class="footer-brand-text">
+            <strong>Tinahls Triad Agro CC</strong>
+            <span>Your Partner in Agro Prosperity</span>
+          </div>
         </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
+
+        <div class="footer-col">
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
@@ -128,35 +111,49 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html">Farm Consultancy</a></li>
-            <li><a href="training.html">Workshops</a></li>
-            <li><a href="services.html">Livestock Support</a></li>
-            <li><a href="services.html">Input Supply</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Ekuku, Oshakati</li>
-            <li><i class="fas fa-phone"></i> +264 81 705 0652</li>
-            <li><i class="fas fa-phone"></i> +264 81 318 8489</li>
-            <li><i class="fas fa-envelope"></i> tinahsagrotriad@gmail.com</li>
-          </ul>
+
+        <div class="footer-col">
+          <div class="footer-contact">
+            <span><i class="fas fa-map-marker-alt"></i> Ekuku, Oshakati</span>
+            <span><i class="fas fa-phone"></i> +264 81 705 0652</span>
+            <span><i class="fas fa-envelope"></i> tinahsagrotriad@gmail.com</span>
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 Tinahls Triad Agro CC. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/264817050652" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
   <script src="js/main.js"></script>
+  <script>
+    /* Send the form without leaving the page (Netlify Forms) */
+    (function () {
+      var form = document.getElementById('contactForm');
+      var status = document.getElementById('ctStatus');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button');
+        btn.disabled = true;
+        status.className = 'ct-status';
+        status.textContent = 'Sending…';
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        }).then(function (r) {
+          if (!r.ok) throw new Error();
+          form.reset();
+          status.className = 'ct-status ok';
+          status.textContent = 'Thank you! Your message has been sent. We will be in touch soon.';
+        }).catch(function () {
+          status.className = 'ct-status err';
+          status.textContent = 'Sorry, something went wrong. Please call or WhatsApp us instead.';
+        }).then(function () { btn.disabled = false; });
+      });
+    })();
+  </script>
 </body>
 </html>
