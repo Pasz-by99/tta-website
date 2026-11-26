@@ -421,10 +421,18 @@ body {
 
 .section-header p { text-wrap: balance; }
 .founder-text p { text-wrap: wrap; }
-/* Home: keep the subtitle clear of the cow on wide screens */
+/* Home: keep the subtitle clear of the cow on desktop */
+@media (min-width: 1101px) {
+  .services-preview .section-header p { max-width: 680px; margin-left: auto; margin-right: auto; }
+}
+@media (min-width: 1101px) and (max-width: 1699px) {
+  .hero { padding-bottom: 28px; }
+  .services-preview .section-header { margin-bottom: 8px; }
+  .services-preview .service-card { padding: 12px 18px 14px; }
+  .services-preview .service-icon { margin-bottom: 8px; }
+}
 @media (min-width: 1700px) {
   .hero { padding-top: 14px; }
-  .services-preview .section-header p { max-width: 760px; margin-left: auto; margin-right: auto; }
 }
 
 /* ===== SERVICES PAGE (full green page + one big card at a time) ===== */
